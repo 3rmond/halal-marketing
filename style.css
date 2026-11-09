@@ -1,0 +1,118 @@
+/* Farben: Grün = frisch/halal, Gold = Akzent */
+:root {
+  --green: #1f6f4a;
+  --green-dark: #154d34;
+  --gold: #c9a227;
+  --text: #1d2420;
+  --muted: #5b665f;
+  --bg: #ffffff;
+  --bg-alt: #f4f7f3;
+  --border: #dfe6df;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+h1, h2, h3 { line-height: 1.25; margin: 0 0 .5em; }
+h1 { font-size: 1.85rem; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.15rem; }
+a { color: var(--green); }
+
+section { padding: 56px 0; }
+section.alt { background: var(--bg-alt); }
+.sub { color: var(--muted); margin-top: -.25em; }
+.small { font-size: .9rem; color: var(--muted); }
+.center { text-align: center; }
+
+/* Header */
+.top { position: sticky; top: 0; background: rgba(255,255,255,.95); border-bottom: 1px solid var(--border); z-index: 10; }
+.top-inner { display: flex; justify-content: space-between; align-items: center; height: 60px; }
+.logo { font-weight: 700; text-decoration: none; color: var(--green-dark); }
+
+/* Buttons */
+.btn {
+  display: inline-block; text-align: center;
+  background: var(--green); color: #fff; text-decoration: none; font-weight: 600;
+  padding: 14px 22px; border-radius: 999px; border: 2px solid var(--green);
+}
+.btn:hover { background: var(--green-dark); border-color: var(--green-dark); }
+.btn-small { padding: 8px 16px; font-size: .9rem; }
+.btn-ghost { background: transparent; color: var(--green); }
+.btn-ghost:hover { background: var(--green); color: #fff; }
+.btn-block { display: block; margin-top: auto; }
+.btn-wa { background: #25d366; border-color: #25d366; color: #0b2e18; }
+.btn-wa:hover { background: #1fb457; border-color: #1fb457; }
+.btn-ghost-light { background: transparent; border-color: #fff; color: #fff; }
+.btn-ghost-light:hover { background: #fff; color: var(--green-dark); }
+.cta-row { display: flex; flex-direction: column; gap: 12px; margin: 24px 0 8px; }
+
+/* Hero */
+.hero { padding: 48px 0 56px; background: linear-gradient(180deg, var(--bg-alt), #fff); }
+.eyebrow { color: var(--green); font-weight: 600; font-size: .95rem; margin: 0 0 12px; }
+.lead { font-size: 1.1rem; color: var(--muted); }
+.hero-note { margin-top: 20px; font-size: .95rem; }
+
+/* Karten */
+.grid { display: grid; gap: 16px; grid-template-columns: 1fr; margin-top: 24px; }
+.card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+.card p { margin: 0; color: var(--muted); }
+
+/* Preise */
+.price-card {
+  position: relative; display: flex; flex-direction: column;
+  background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px;
+}
+.price-card.featured { border: 2px solid var(--green); }
+.price { font-size: 2rem; font-weight: 700; margin: 0 0 12px; color: var(--green-dark); }
+.price span { font-size: 1rem; font-weight: 400; color: var(--muted); margin-left: 6px; }
+.price-card ul { padding-left: 20px; margin: 0 0 20px; }
+.price-card li { margin-bottom: 6px; }
+.badge {
+  display: inline-block; align-self: flex-start; margin: 0 0 10px;
+  background: var(--green); color: #fff; font-size: .8rem; font-weight: 600;
+  padding: 3px 10px; border-radius: 999px;
+}
+.badge-gold { background: var(--gold); color: #2a2205; }
+
+/* Ablauf */
+.steps { padding-left: 22px; margin: 24px 0 0; }
+.steps li { margin-bottom: 18px; }
+.steps strong { display: block; }
+
+/* Portfolio */
+.placeholder {
+  aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center;
+  border: 2px dashed var(--border); border-radius: var(--radius); color: var(--muted); background: #fff;
+}
+
+/* Kontakt */
+.contact { background: var(--green-dark); color: #fff; }
+.contact .lead, .contact .small { color: #d7e6dc; }
+
+/* Footer */
+footer { padding: 24px 0; font-size: .9rem; color: var(--muted); text-align: center; }
+footer p { margin: 4px 0; }
+
+/* Unterseiten */
+.legal { padding: 40px 0; }
+
+/* Ab Tablet */
+@media (min-width: 700px) {
+  h1 { font-size: 2.5rem; }
+  .cta-row { flex-direction: row; flex-wrap: wrap; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .grid.prices, .grid.portfolio { grid-template-columns: repeat(3, 1fr); }
+  #transparenz .grid { grid-template-columns: repeat(3, 1fr); }
+}
